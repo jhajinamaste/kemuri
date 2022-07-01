@@ -1,0 +1,89 @@
+
+/**** FONTS INITIALIZATION ****/
+@font-face {font-family: "Roboto"; src: url("fonts/roboto.ttf")}
+@font-face {font-family: "RobotoThin"; src: url("fonts/roboto-thin.ttf")}
+
+/**** BEGIN STYLING ****/
+body {
+  font-family: 'Roboto';
+  font-size: 14px;
+}
+.robotoThin {
+  font-family: 'RobotoThin' !important;
+}
+.form-block {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.form-block .form-group {
+  width: 11rem;
+}
+.form-upload {
+  justify-content: center;
+}
+hr {
+  color: #ccc;
+}
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.pageTitle,
+.card-title {
+  font-family: 'RobotoThin';
+  text-transform: capitalize;
+}
+.stats-cont {
+  border: 1px solid #dddddd87;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+li {
+  line-height: 2;
+}
+.pageLoader {
+  background: url('../images/preloader.gif') no-repeat center center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999999;
+  background-color: #ffffff8c;
+  background-size: 5rem;
+  display: none;
+}
+#result {
+  display: none;
+}
+.select2-container--default .select2-selection--single {
+  height: 32px;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding: 0.1rem 0.7rem !important;
+  font-size: 0.8rem;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  top: 65%;
+}
+.select2-container {
+  width: -moz-available !important;
+}
+.form-control {
+  font-size: 0.8rem;
+}
+.action,
+.uploadFile {
+  font-size: 0.8rem;
+}
+.nav-link {
+  text-align: right;
+}

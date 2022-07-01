@@ -1,0 +1,31 @@
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+  .r-anf-cont {
+    width: 90%;
+  }
+  .r-fb {
+    display: block;
+  }
+  .r-fg-mt {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+  .r-fg-w {
+    width: 100% !important;
+  }
+  .r-st {
+    width: 100%;
+  }
+  .r-sc {
+    line-height: 2;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  .r-mm {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
