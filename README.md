@@ -28,7 +28,7 @@
     <li>Browse the file to upload and click on upload button. The format only accepts <i>csv</i> files.</li>
     <li>Once the file is successfully uploaded you will get a successful alert message.</li>
     <li>Navigate back to the <i>Analyzer Tool</i> from the navigation menu, select the desired stock from the list and input a valid date range and click on <i>Analyze</i> button.</li>
-    <li>You if the inputs are correct and vald you should see the analyzed data immediately. Else, you will receive an error alert message.</li>
+    <li>If the inputs are correct and valid then you should see the analyzed data immediately. Else, you will receive an error alert message.</li>
   </ol>
 </div>
 <br>
@@ -47,5 +47,6 @@
     <li>Beautiful pre loader with overlay added to make UI better.</li>
     <li>Checks for duplicate records using all fields Stock Name, Price and Date before inserting.</li>
     <li>Invalid price check added. If any price column in CSV file is invalid then the user will receive an error message along with the ID of the field where the error exists. The upload process will be aborted. Only files with correct price data are processed.</li>
-  </ol>
+    <li>CSV file type validation (MIME) done from the backend while uploading the file.</li>
+ </ol>
 </div>
