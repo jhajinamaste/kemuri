@@ -44,7 +44,7 @@
     <li>Multiple date formats accepted from the CSV file. It changes to the database format (YYYY-MM-DD) in the background while insertion into the database.</li>
     <li>Object Oriented Programming (OOP) approach taken for building the tool.</li>
     <li>Unsorted CSV files are accepted. No matter which column lies in which position it will always be processed correctly.</li>
-    <li>Beautiful pre loader with overlay added to make UI better.</li>
+    <li>Beautiful pre loader with overlay added to give UI an additional charm.</li>
     <li>Checks for duplicate records using all fields Stock Name, Price and Date before inserting.</li>
     <li>Invalid price check added. If any price column in CSV file is invalid then the user will receive an error message along with the ID of the field where the error exists. The upload process will be aborted. Only files with correct price data are processed.</li>
     <li>CSV file type validation (MIME) done from the backend while uploading the file.</li>
