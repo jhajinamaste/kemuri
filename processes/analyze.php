@@ -7,8 +7,8 @@ $end = (!empty($_POST['end']))?$_POST['end']:'';
 
 if($_POST){
   $validations->checkEmpty($stock, 'Stock');
-  $validations->checkEmpty($stock, 'Start Date');
-  $validations->checkEmpty($stock, 'End Date');
+  $validations->checkEmpty($start, 'Start Date');
+  $validations->checkEmpty($end, 'End Date');
 
   $stmt = $con->db()->prepare("SELECT * FROM stocks WHERE stock_name = :name AND (date BETWEEN :start AND :end) ORDER BY date");
   $stmt-> bindValue(':name', $stock);
