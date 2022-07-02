@@ -15,11 +15,11 @@
         </div>
         <div class="form-group r-fg-mt r-fg-w">
           <label class="form-label" for="from">Start Date</label>
-          <input class="form-control theDatePicker" id="from" type="text" name="start" readonly>
+          <input class="form-control theDatePicker" id="from" type="text" name="start" readonly value="2020-02-13">
         </div>
         <div class="form-group r-fg-mt r-fg-w">
           <label class="form-label" for="to">End Date</label>
-          <input class="form-control theDatePicker" id="to" type="text" name="end" readonly>
+          <input class="form-control theDatePicker" id="to" type="text" name="end" readonly value="2020-02-21">
         </div>
         <button type="submit" class="btn btn-primary r-fg-mt r-fg-w action">Analyze</button>
       </div>
@@ -45,10 +45,10 @@
         <ul>
           <li><b>Best Buying Date:</b> <span class="profitBuyDate"></span></li>
           <li><b>Best Selling Date:</b> <span class="profitSellDate"></span></li>
-          <li><b>Best Buying Price:</b> &#8377; <span class="profitBuyPrice"></span></li>
-          <li><b>Best Selling Price:</b> &#8377; <span class="profitSellPrice"></span></li>
-          <li><b>Profit Per Share:</b> &#8377; <span class="profitPerShare"></span></li>
-          <li><b>Total Profit:</b> &#8377; <span class="profitTotal"></span></li>
+          <li><b>Best Buying Price:</b> <span class="profitBuyPrice"></span></li>
+          <li><b>Best Selling Price:</b> <span class="profitSellPrice"></span></li>
+          <li><b>Profit Per Share:</b> <span class="profitPerShare"></span></li>
+          <li><b>Total Profit:</b> <span class="profitTotal"></span></li>
         </ul>
       </div>
       <div class="col-6 r-mm">
@@ -57,10 +57,10 @@
         <ul>
           <li><b>Best Buying Date:</b> <span class="lossBuyDate"></span></li>
           <li><b>Best Selling Date:</b> <span class="lossSellDate"></span></li>
-          <li><b>Best Buying Price:</b> &#8377; <span class="lossBuyPrice"></span></li>
-          <li><b>Best Selling Price:</b> &#8377; <span class="lossSellPrice"></span></li>
-          <li><b>Loss Per Share:</b> &#8377; <span class="lossPerShare"></span></li>
-          <li><b>Total Loss:</b> &#8377; <span class="lossTotal"></span></li>
+          <li><b>Best Buying Price:</b> <span class="lossBuyPrice"></span></li>
+          <li><b>Best Selling Price:</b> <span class="lossSellPrice"></span></li>
+          <li><b>Loss Per Share:</b> <span class="lossPerShare"></span></li>
+          <li><b>Total Loss:</b> <span class="lossTotal"></span></li>
         </ul>
       </div>
     </div>

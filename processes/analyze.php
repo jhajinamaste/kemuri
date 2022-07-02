@@ -37,39 +37,43 @@ if($_POST){
       $nearest = max($price)-min($price)+1;
       $profitArray = [];
       $lossArray = [];
-      $profit = $price[1] - $price[0];
+      $profit = 0;
+      $profitCalc = 0;
+      $lossCalc = 0;
       
       for($i = 0; $i < $arrLength; $i++){
         for($j = $i+1; $j < $arrLength; $j++){ 
           // CALCULATING FOR MAXIMUM PROFIT
           if($i == 0 && $j == 1){
-            $profitArray['buyPrice'] = $price[$i]; 
-            $profitArray['sellPrice'] = $price[$j];
-            $profitArray['buyDate'] = $date[$i];
-            $profitArray['sellDate'] = $date[$j];
-            $profitArray['profit'] = $price[$j] - $price[$i];
-            $profitArray['totalProfit'] = $profitArray['profit']*$shares;
+            $profitCalc = $price[$j] - $price[$i];
+            $profitArray['buyPrice'] = ($price[$j] > $price[$i])?'&#8377; '.$price[$i]:'N/A';
+            $profitArray['sellPrice'] = ($price[$j] > $price[$i])?'&#8377; '.$price[$j]:'N/A';
+            $profitArray['buyDate'] = ($price[$j] > $price[$i])?$date[$i]:'N/A';
+            $profitArray['sellDate'] = ($price[$j] > $price[$i])?$date[$j]:'N/A';
+            $profitArray['profit'] = ($price[$j] > $price[$i])?'&#8377; '.$profitCalc:'N/A';
+            $profitArray['totalProfit'] = ($price[$j] > $price[$i])?'&#8377; '.$profitCalc*$shares:'N/A';
           }
 
           if(($price[$j] - $price[$i]) > $profit){
             $profit = $price[$j] - $price[$i];
-            $profitArray['buyPrice'] = $price[$i]; 
-            $profitArray['sellPrice'] = $price[$j];
+            $profitArray['buyPrice'] = '&#8377; '.$price[$i]; 
+            $profitArray['sellPrice'] = '&#8377; '.$price[$j];
             $profitArray['buyDate'] = $date[$i];
             $profitArray['sellDate'] = $date[$j];
-            $profitArray['profit'] = $profit;
-            $profitArray['totalProfit'] = $profitArray['profit']*$shares;
+            $profitArray['profit'] = '&#8377; '.$profit;
+            $profitArray['totalProfit'] = '&#8377; '.$profit*$shares;
           }
 
           // CALCULATING FOR MINIMUM LOSS
           if($price[$keys[$j]] <= $price[$keys[$i]]){
             if(($diff = abs($price[$keys[$i]] - $price[$keys[$j]])) <= $nearest){
-              $lossArray['buyPrice'] = $price[$keys[$i]]; 
-              $lossArray['sellPrice'] = $price[$keys[$j]];
+              $lossCalc = $price[$keys[$i]]- $price[$keys[$j]];
+              $lossArray['buyPrice'] = '&#8377; '.$price[$keys[$i]]; 
+              $lossArray['sellPrice'] = '&#8377; '.$price[$keys[$j]];
               $lossArray['buyDate'] = $date[$keys[$i]];
               $lossArray['sellDate'] = $date[$keys[$j]];
-              $lossArray['loss'] = $price[$keys[$i]]- $price[$keys[$j]];
-              $lossArray['totalLoss'] = $lossArray['loss']*$shares;
+              $lossArray['loss'] = '&#8377; '.$lossCalc;
+              $lossArray['totalLoss'] = '&#8377; '.$lossCalc*$shares;
               $nearest = $lossArray['loss'];
             }
           }
@@ -88,16 +92,16 @@ if($_POST){
         'profitData' => [
           'buyPrice' => $profitArray['buyPrice'],
           'sellPrice' => $profitArray['sellPrice'],
-          'buyDate' => date('jS M, Y', strtotime($profitArray['buyDate'])),
-          'sellDate' => date('jS M, Y', strtotime($profitArray['sellDate'])),
+          'buyDate' => ($profitArray['buyDate'] == 'N/A')?'N/A':date('jS M, Y', strtotime($profitArray['buyDate'])),
+          'sellDate' => ($profitArray['sellDate'] == 'N/A')?'N/A':date('jS M, Y', strtotime($profitArray['sellDate'])),
           'perShare' => $profitArray['profit'],
           'total' => $profitArray['totalProfit']
         ],
         'lossData' => [
           'buyPrice' => $lossArray['buyPrice'],
           'sellPrice' => $lossArray['sellPrice'],
-          'buyDate' => date('jS M, Y', strtotime($lossArray['buyDate'])),
-          'sellDate' => date('jS M, Y', strtotime($lossArray['sellDate'])),
+          'buyDate' => ($lossArray['buyDate'] == 'N/A')?'N/A':date('jS M, Y', strtotime($lossArray['buyDate'])),
+          'sellDate' => ($lossArray['sellDate'] == 'N/A')?'N/A':date('jS M, Y', strtotime($lossArray['sellDate'])),
           'perShare' => $lossArray['loss'],
           'total' => $lossArray['totalLoss']
         ]
