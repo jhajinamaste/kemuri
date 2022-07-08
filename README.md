@@ -1,7 +1,14 @@
 <h1>Stock Trading Anazlyzer</h1>
 
+<h3>Developer Details</h3>
 <div>
-  <b>Developer:</b> Shubham Kumar Jha
+  <ul>
+    <li><b>Developer:</b> Shubham Kumar Jha</li>
+    <li><b>Contact Email:</b> jhajinamaste@gmail.com</li>
+    <li><b>LinkedIn:</b> https://www.linkedin.com/in/shreyk99/</li>
+    <li><b>Created On:</b> 1st Jul, 2022</li>
+    <li><b>Last Updated On:</b> 3rd Jul, 2022</li>
+  </ul>
 </div>
 <br>
 <div>
